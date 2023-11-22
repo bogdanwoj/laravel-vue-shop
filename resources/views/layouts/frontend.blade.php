@@ -13,7 +13,7 @@
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-
+    @yield('styles')
     <script src="{{ asset('css/app.css') }}" defer></script>
 
     <!--====== Bootstrap css ======-->
@@ -40,7 +40,7 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    @yield('styles')
+
 
 
 </head>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <li class="nav-item">
-            <a href="/home" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
+            <a href="/checkout" class="text-sm text-gray-700 dark:text-gray-500 underline">Cart</a>
         </li>
     </div>
 </template>
