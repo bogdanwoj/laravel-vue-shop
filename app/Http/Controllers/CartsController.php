@@ -145,4 +145,26 @@ class CartsController extends Controller
 
     return response()->json($finalData);
     }
+
+
+    public function processPayment(Request $request)
+    {
+        $firstName = $request->get('firstName');
+        $lastName = $request->get('lastName');
+        $address = $request->get('address');
+        $city = $request->get('city');
+        $state = $request->get('state');
+        $zipCode = $request->get('zipCode');
+        $email = $request->get('email');
+        $phone = $request->get('phone');
+        $country = $request->get('country');
+        $cardType = $request->get('cardType');
+        $expirationMonth = $request->get('expirationMonth');
+        $expirationYear = $request->get('expirationYear');
+        $cvv = $request->get('cvv');
+        $cardNumber = $request->get('cardNumber');
+
+
+        dd($request->all());
+    }
 }
