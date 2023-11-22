@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="/">
                             <img src="assets/images/logo.png" alt="Logo">
                         </a> <!-- Logo -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +80,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a data-scroll-nav="0" href="#home">Home</a>
+                                    <a data-scroll-nav="0" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a data-scroll-nav="0" href="#product">Products</a>
@@ -102,6 +102,11 @@
                                 </li>
                                 @if (Route::has('login'))
                                     @auth
+                                        <li class="nav-item">
+                                            <a href="{{ route('logout') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log out</a>
+                                        </li>
+
+
                                         <Cart/>
                                     @else
                                         <li class="nav-item">
