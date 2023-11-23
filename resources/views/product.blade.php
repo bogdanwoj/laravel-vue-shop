@@ -22,9 +22,8 @@
                         </div>
                         <div class="col-lg-8 col-md-7">
                             <div class="slider-product-content">
-                                <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s"><span>Sofa</span> and <span>Armchairs</span></h1>
+                                <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s"><span>There are many variations of passages of Lorem Ipsum</span></h1>
                                 <p class="mb-25" data-animation="fadeInUp" data-delay="0.9s">One day however a small line of blind text by the name of Lorem Ipsum <br> decided to leave for the far World of Grammar.</p>
-                                <a class="main-btn" href="#" data-animation="fadeInUp" data-delay="1.5s">Explore More <i class="lni-chevron-right"></i></a>
                             </div> <!-- slider product content -->
                         </div>
                     </div> <!-- row -->
@@ -44,7 +43,7 @@
                         </div>
                         <div class="col-lg-8 col-md-7">
                             <div class="slider-product-content">
-                                <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s"><span>Winter</span> Sale! is <span>Here</span></h1>
+                                <h1 class="slider-title mb-10" data-animation="fadeInUp" data-delay="0.3s"><span>Lorem Ipsum</span> established fact that a reader <span>Here</span></h1>
                                 <p class="mb-25" data-animation="fadeInUp" data-delay="0.9s">One day however a small line of blind text by the name of Lorem Ipsum <br> decided to leave for the far World of Grammar.</p>
                                 <a class="main-btn" href="#" data-animation="fadeInUp" data-delay="1.5s">Explore More <i class="lni-chevron-right"></i></a>
                             </div> <!-- slider product content -->
@@ -75,17 +74,7 @@
                 </div> <!-- container -->
             </div> <!-- single slider -->
         </div> <!-- slider active -->
-        <div class="slider-social">
-            <div class="row justify-content-end">
-                <div class="col-lg-7 col-md-6">
-                    <ul class="social text-right">
-                        <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                        <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-                        <li><a href="#"><i class="lni-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div> <!-- container fluid -->
 </section>
 
@@ -129,23 +118,8 @@
 <section id="product" class="product-area pt-100 pb-130">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-4">
-                <div class="collection-menu text-center mt-30">
-                    <h4 class="collection-tilte">OUR COLLECTION</h4>
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="active" id="v-pills-furniture-tab" data-toggle="pill" href="#v-pills-furniture" role="tab" aria-controls="v-pills-furniture" aria-selected="true">Furniture</a>
 
-                        <a id="v-pills-decorative-tab" data-toggle="pill" href="#v-pills-decorative" role="tab" aria-controls="v-pills-decorative" aria-selected="false">Decorative</a>
-
-                        <a id="v-pills-lighting-tab" data-toggle="pill" href="#v-pills-lighting" role="tab" aria-controls="v-pills-lighting" aria-selected="false">Lighting</a>
-
-                        <a id="v-pills-outdoor-tab" data-toggle="pill" href="#v-pills-outdoor" role="tab" aria-controls="v-pills-outdoor" aria-selected="false">Outdoor</a>
-
-                        <a id="v-pills-storage-tab" data-toggle="pill" href="#v-pills-storage" role="tab" aria-controls="v-pills-storage" aria-selected="false">Storage</a>
-                    </div> <!-- nav -->
-                </div> <!-- collection menu -->
-            </div>
-            <div class="col-lg-9 col-md-8">
+            <div class="col-lg-12 col-md-8">
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-furniture" role="tabpanel" aria-labelledby="v-pills-furniture-tab">
                         <div class="product-items mt-30">
@@ -155,7 +129,7 @@
                                         <div class="col-md-4 ">
                                             <div class="single-product-items">
                                                 <div class="product-item-image">
-                                                    <a href="#"><img src="{{$product->image_name}}" alt="Product" style="height: 330px; width: 310px"></a>
+                                                    <a href="#"><img src="{{$product->image_name}}" alt="Product" ></a>
 
                                                     <div class="product-discount-tag">
                                                         <p>-$50</p>
@@ -269,15 +243,6 @@
                 </div>
             </div> <!-- row -->
         </div> <!-- footer widget -->
-        <div class="footer-copyright pt-15 pb-15">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright text-center">
-                        <p>Crafted by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
-                    </div> <!-- copyright -->
-                </div>
-            </div> <!-- row -->
-        </div> <!--  footer copyright -->
     </div> <!-- container -->
 </section>
 

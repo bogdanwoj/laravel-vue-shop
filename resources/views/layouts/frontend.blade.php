@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>Furnish - Furniture and Decor Website Template</title>
+    <title>Shop</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
@@ -83,10 +83,10 @@
                                     <a data-scroll-nav="0" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#product">Products</a>
+                                    <a data-scroll-nav="0" href="/products">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#contact">Contact</a>
+                                    <a data-scroll-nav="0" href="/contact">Contact</a>
                                 </li>
                                 @auth
                                     <li class="nav-item">
