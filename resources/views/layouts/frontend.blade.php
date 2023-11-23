@@ -86,27 +86,23 @@
                                     <a data-scroll-nav="0" href="#product">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#service">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#showcase">Portfolio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#team">Team</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#blog">Blog</a>
-                                </li>
-                                <li class="nav-item">
                                     <a data-scroll-nav="0" href="#contact">Contact</a>
                                 </li>
+                                @auth
+                                    <li class="nav-item">
+                                        <a data-scroll-nav="0" href="#"></a>
+                                        <div class="dropdown">
+                                        <span class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Welcome <b>{{\Illuminate\Support\Facades\Auth::user()->name}}</b>
+                                        </span>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a href="{{ route('logout') }}" class="text-sm text-gray-700 dark:text-gray-500 underline ml-1">Log out</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endauth
                                 @if (Route::has('login'))
                                     @auth
-                                        <li class="nav-item">
-                                            <a href="{{ route('logout') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log out</a>
-                                        </li>
-
-
                                         <Cart/>
                                     @else
                                         <li class="nav-item">

@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\Auth\LogoutController;
     use App\Http\Controllers\CartsController;
     use App\Http\Controllers\ProductsController;
     use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@
 
 Route::get('/', [ProductsController::class, 'index']);
 
-
+Route::get('/logout', [LogoutController::class, 'logout']);;
 Auth::routes();
 
 Route::post('/cart', [CartsController::class, 'store'])->name('cart');
