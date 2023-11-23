@@ -167,4 +167,9 @@ class CartsController extends Controller
 
         dd($request->all());
     }
+
+    public function countCartItems(){
+        $userItems = Cart::where('user_id', auth()->user()->id)->sum('quantity');
+        return [$userItems];
+    }
 }
