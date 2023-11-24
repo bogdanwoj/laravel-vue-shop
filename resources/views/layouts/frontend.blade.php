@@ -78,6 +78,7 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <span>ceva</span>
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item active">
                                     <a data-scroll-nav="0" href="/">Home</a>
