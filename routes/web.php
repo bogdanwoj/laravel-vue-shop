@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\Auth\LogoutController;
     use App\Http\Controllers\CartsController;
+    use App\Http\Controllers\AdminDashboardsController;
     use App\Http\Controllers\ContactsController;
     use App\Http\Controllers\ProductsController;
     use Illuminate\Support\Facades\Auth;
@@ -29,9 +30,13 @@ Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheck
 Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
 Route::get('/countCartItems', [CartsController::class, 'countCartItems'])->name('countCartItems');
 
-//Route::get('/contacts/create', [ContactsController::class, 'create'])->name('contacts.create');
-//Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
 
-    Route::get('/contact', [ContactsController::class, 'index'])->name('contacts.index');
-    Route::post('/contact/store', [ContactsController::class, 'store'])->name('storeContact');
+Route::get('/contact', [ContactsController::class, 'indexPage'])->name('contacts.index');
+Route::get('/contacts', [ContactsController::class, 'index']);
+Route::post('/contact/store', [ContactsController::class, 'store'])->name('storeContact');
+Route::get('/contacts/{id}/edit', [ContactsController::class, 'edit'])->name('contacts.edit');
+Route::put('/contacts/{id}', [ContactsController::class, 'update'])->name('contacts.update');
+Route::delete('/contacts/{id}', [ContactsController::class, 'destroy'])->name('contacts.destroy');
+
+Route::get('/admin/dashboard', [AdminDashboardsController::class, 'index'])->name('admin.dashboard');
 

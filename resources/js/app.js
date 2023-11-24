@@ -7,6 +7,9 @@ import Cart from './components/Cart.vue';
 import Checkout from './components/Checkout.vue';
 import BadgeIcon from "./components/BadgeIcon";
 import Contact from "./components/Contact.vue";
+import ProductTable from "./components/ProductTable.vue";
+import ContactTable from "./components/ContactTable.vue";
+
 
 
 // Create the app instance
@@ -18,6 +21,8 @@ app.component('cart', Cart);
 app.component('checkout', Checkout);
 app.component('badge-icon', BadgeIcon);
 app.component('contact', Contact);
+app.component('ContactTable', ContactTable);
+app.component('ProductTable', ProductTable);
 
 // Mount the app to the specified element with ID 'app' in your HTML
 app.mount("#app");
