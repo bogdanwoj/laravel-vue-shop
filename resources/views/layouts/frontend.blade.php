@@ -82,9 +82,7 @@
                                 <a href="/admin/dashboard">Admin Dashboard</a>
                             </li>
                             <ul id="nav" class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a data-scroll-nav="0" href="/">Home</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a data-scroll-nav="0" href="/productsList">Products</a>
                                 </li>

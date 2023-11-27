@@ -23548,7 +23548,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "btn btn-primary"
     }, "Edit", 8 /* PROPS */, _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Delete button (You may want to show a confirmation modal before actual deletion) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
-        return $options.deleteProduct(product.id);
+        return $options.deleteProductConfirmation(product.id);
       },
       "class": "btn btn-danger"
     }, "Delete", 8 /* PROPS */, _hoisted_6)])]);

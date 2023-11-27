@@ -25,7 +25,7 @@
                     <button @click="editProduct(product.id)" class="btn btn-primary">Edit</button>
 
                     <!-- Delete button (You may want to show a confirmation modal before actual deletion) -->
-                    <button @click="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                    <button @click="deleteProductConfirmation(product.id)" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
             </tbody>

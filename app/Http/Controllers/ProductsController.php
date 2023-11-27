@@ -105,14 +105,10 @@ class ProductsController extends Controller
                          ->with('success', 'Product updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $contact = Product::findOrFail($id);
+        $contact->delete();
+
     }
 }
