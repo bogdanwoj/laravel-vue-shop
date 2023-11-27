@@ -5,6 +5,7 @@
     use App\Http\Controllers\AdminDashboardsController;
     use App\Http\Controllers\ContactsController;
     use App\Http\Controllers\ProductsController;
+    use App\Models\Product;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::get('/checkout', [CartsController::class, 'index'])->name('checkout');
 Route::get('/checkout/get/items', [CartsController::class, 'getCartItemsForCheckout']);
 Route::post('/process/user/payment', [CartsController::class, 'processPayment']);
 Route::get('/countCartItems', [CartsController::class, 'countCartItems'])->name('countCartItems');
+
+//Route::get('/productsList', [ProductsController::class, 'indexProducts'])->name('productsList');
+Route::get('/productsList', [ProductsController::class, 'indexProducts'])->name('productsList');
 
 
 Route::get('/contact', [ContactsController::class, 'indexPage'])->name('contacts.index');

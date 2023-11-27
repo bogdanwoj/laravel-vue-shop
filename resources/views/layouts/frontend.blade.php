@@ -86,7 +86,7 @@
                                     <a data-scroll-nav="0" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-scroll-nav="0" href="/products">Products</a>
+                                    <a data-scroll-nav="0" href="/productsList">Products</a>
                                 </li>
                                 <li class="nav-item">
                                     <a data-scroll-nav="0" href="/contact">Contact</a>
