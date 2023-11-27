@@ -15,6 +15,13 @@ class ProductsController extends Controller
         return view('product', ['products' => $product]);
     }
 
+    public function adminIndexProducts()
+    {
+        $product = Product::all();
+
+        return (['products' => $product]);
+    }
+
     public function indexProducts()
     {
         $products = Product::all();
@@ -58,11 +65,13 @@ class ProductsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('pages.editProduct', compact('product'));
     }
 
     /**
@@ -70,11 +79,30 @@ class ProductsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+//            'image_name' => 'required|string',
+            'price' => 'required|numeric',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        $product->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+//            'image_name' => $request->input('image_name'),
+            'price' => $request->input('price'),
+        ]);
+
+
+        return redirect()->route('admin.dashboard')
+                         ->with('success', 'Product updated successfully');
     }
 
     /**

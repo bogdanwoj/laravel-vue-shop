@@ -18,7 +18,7 @@
                 <td>{{ product.id }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
-                <td>{{ product.sale_price }}</td>
+                <td>{{ product.price }}</td>
                 <td><img :src="product.image_name" alt="Product Image" style="max-width: 50px;"></td>
                 <td>
                     <!-- Edit button -->
@@ -34,21 +34,48 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-    props: {
-        products: Array,
-        editProduct: Function,
-        deleteProduct: Function,
+    data() {
+        return {
+            products: [],
+        };
+    },
+    mounted() {
+        this.fetchProducts();
     },
     methods: {
+        fetchProducts() {
+            axios.get('/products')
+                .then(response => {
+                    this.products = response.data.products;
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        },
         editProduct(id) {
-            // Add your edit product logic here
-            console.log(`Edit product with ID: ${id}`);
+            // Programmatically navigate to the edit route
+            window.location.href = `/products/${id}/edit`;
+        },
+        deleteProductConfirmation(id) {
+            if (window.confirm('Are you sure you want to delete this Product?')) {
+                this.deleteProduct(id);
+            }
         },
         deleteProduct(id) {
-            // Add your delete product logic here
-            console.log(`Delete product with ID: ${id}`);
+            axios.delete(`/products/${id}`)
+                .then(response => {
+                    console.log(`Product with ID ${id} deleted successfully.`, response.data);
+
+                    // Refresh the current page
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error(`Error deleting Product with ID ${id}:`, error);
+                });
         },
-    }
+    },
 };
 </script>

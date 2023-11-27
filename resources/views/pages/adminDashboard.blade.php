@@ -6,16 +6,19 @@
 
         <!-- Include Vue.js and Your Components -->
         <contact-table :contacts="contacts"></contact-table>
+        <product-table :products="products"></product-table>
 
     </div>
 @endsection
 
 <script>
     import ContactTable from "../../js/components/ContactTable";
+    import ProductTable from "../../js/components/ProductTable";
 
 
     export default {
         components: {
+            ProductTable,
             ContactTable,
 
         },
