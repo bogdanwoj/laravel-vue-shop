@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -17,10 +19,27 @@ class ProductsController extends Controller
 
     public function adminIndexProducts()
     {
-        $product = Product::all();
+        if (Auth::check()) {
+            // Check if the authenticated user is an admin
+            $isAdmin = Auth::user()->role === 'admin';
+            if ($isAdmin) {
 
-        return (['products' => $product]);
+
+                $product = Product::all();
+
+                return (['products' => $product]);
+
+
+            } else {
+                // If the authenticated user is not an admin, you can redirect or show an error page
+                return redirect()
+                    ->route('login')
+                    ->with('error', 'You do not have permission to access the admin dashboard.');
+            }
+        }
+
     }
+
 
     public function indexProducts()
     {
@@ -70,8 +89,25 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
-        return view('pages.editProduct', compact('product'));
+
+        if (Auth::check()) {
+            // Check if the authenticated user is an admin
+            $isAdmin = Auth::user()->role === 'admin';
+            if ($isAdmin) {
+
+
+                $product = Product::findOrFail($id);
+                return view('pages.editProduct', compact('product'));
+
+
+            }else {
+                // If the authenticated user is not an admin, you can redirect or show an error page
+                return redirect()
+                    ->route('login')
+                    ->with('error', 'You do not have permission to access the admin dashboard.');
+            }
+        }
+
     }
 
     /**
@@ -84,31 +120,61 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-//            'image_name' => 'required|string',
-            'price' => 'required|numeric',
-        ]);
 
-        $product = Product::findOrFail($id);
+        if (Auth::check()) {
+            // Check if the authenticated user is an admin
+            $isAdmin = Auth::user()->role === 'admin';
+            if ($isAdmin) {
 
-        $product->update([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
-//            'image_name' => $request->input('image_name'),
-            'price' => $request->input('price'),
-        ]);
+                $request->validate([
+                    'name' => 'required|string|max:255',
+                    'description' => 'required|string',
+                    //            'image_name' => 'required|string',
+                    'price' => 'required|numeric',
+                ]);
+
+                $product = Product::findOrFail($id);
+
+                $product->update([
+                    'name' => $request->input('name'),
+                    'description' => $request->input('description'),
+                    //            'image_name' => $request->input('image_name'),
+                    'price' => $request->input('price'),
+                ]);
 
 
-        return redirect()->route('admin.dashboard')
-                         ->with('success', 'Product updated successfully');
+                return redirect()->route('admin.dashboard')
+                                 ->with('success', 'Product updated successfully');
+
+            } else {
+                // If the authenticated user is not an admin, you can redirect or show an error page
+                return redirect()
+                    ->route('login')
+                    ->with('error', 'You do not have permission to access the admin dashboard.');
+            }
+        }
+
+
     }
 
     public function destroy($id)
     {
-        $contact = Product::findOrFail($id);
-        $contact->delete();
+        if (Auth::check()) {
+            // Check if the authenticated user is an admin
+            $isAdmin = Auth::user()->role === 'admin';
+            if ($isAdmin) {
+
+                $product = Product::findOrFail($id);
+                $product->delete();
+
+
+            } else {
+                // If the authenticated user is not an admin, you can redirect or show an error page
+                return redirect()
+                    ->route('login')
+                    ->with('error', 'You do not have permission to access the admin dashboard.');
+            }
+        }
 
     }
 }

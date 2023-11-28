@@ -78,9 +78,14 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <li class="nav-item">
-                                <a href="/admin/dashboard">Admin Dashboard</a>
-                            </li>
+                            @auth
+                                <li class="nav-item">
+                                    @if(auth()->user()->isAdmin())
+                                        <a href="/admin/dashboard">Admin Dashboard</a>
+                                    @endif
+                                </li>
+                            @endauth
+
                             <ul id="nav" class="navbar-nav ml-auto">
 
                                 <li class="nav-item">
